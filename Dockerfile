@@ -30,6 +30,7 @@ RUN apk update \
     && update-ca-certificates
 
 COPY --from=builder2 /build/one-api /
+USER 10101
 EXPOSE 3000
 WORKDIR /data
 ENTRYPOINT ["/one-api"]
